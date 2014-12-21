@@ -1,0 +1,25 @@
+name:          mch
+version:       0.0.1
+synopsis:      Monitor Change Hook
+description:   Detect when a monitor is plugged or unplugged
+homepage:      http://github.com/eonpatapon/mch
+license:       MIT
+copyright:     (c) 2014 Jean-Philippe Braun
+author:        Jean-Philippe Braun <eon@patapon.info>
+maintainer:    Jean-Philippe Braun <eon@patapon.info>
+build-type:    Simple
+cabal-version: >= 1.8
+
+executable mch
+  main-is: main.hs
+
+  ghc-options: -Wall
+
+  build-depends: base == 4.*
+               , udev
+               , select
+               , bytestring
+               , process
+               , unix
+               , directory
+               , xdg-basedir
