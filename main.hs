@@ -49,7 +49,11 @@ getProp dev prop = do
 runHooks :: IO ()
 runHooks = getUserConfigDir "mch" >>=
            getDirectoryContents >>=
-           mapM_ (\a -> callProcess  a [""])
+           mapM_ call
+        where
+            call "." = return ()
+            call ".." = return ()
+            call a = callProcess a [""]
 
 
 watchUdev :: IO()
